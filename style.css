@@ -1,0 +1,267 @@
+:root{
+
+}
+
+/**************************************** Reset ***************************************/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1; 
+}
+
+h1,h2{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+/*************************************** Header ****************************************/
+header{
+    width: 100%;
+    padding: 2em 0 2em 0;
+}
+.header--logo{
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    display: none;
+}/*Popraviti header ili izbaciti skroz*/
+/****************************************** Main ***************************************/
+
+/************************************** Hero Section **********************************/
+
+.hero-section--heading{
+    display: none;
+}
+.hero-section--content{
+    display: grid;
+    justify-items: center;
+    padding: 1em;
+    gap:2em;
+}
+.hero-section--content--content{
+    max-width: 48ch;
+}
+.hero-section--content--buttons-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+.button{
+    padding: .5em 1.5em .5em 1.5em;
+    background-color: black;
+    color: white;
+    border:none;
+    border-radius: .75em;
+    font-weight: 700;
+    border: 1px solid black;
+    text-align: center;
+}
+.button--github{
+    background-color: purple;
+    border:1px solid purple;
+    padding: 1em 1.5em 1em 1.5em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.button--github:hover{
+    cursor: pointer;
+    background-color: white;
+    color:purple;
+}
+
+@media(min-width:50em){
+    .hero-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        padding: 2em 0 2em 0;
+    }
+    .hero-section--heading{
+        display: block;
+        height: calc(100vh)
+    }
+    .hero-section--heading--background{
+        position: relative;
+    }
+    .hero-section--heading--main-heading{
+        color: black;
+        font-size: 3rem;
+    }
+    .hero-section-heading--subheading{
+        color: black;
+        font-size: 2rem;
+    }
+    .hero-section--content--content{
+        max-width: 48ch;
+    }
+    .hero-section--heading--background::before{
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: calc(100vh + 20em);
+        background-image: url("./hero-background.jpg");
+        top: -10em;
+        left: 0;
+        z-index: -1;
+        clip-path: polygon(0% 0%, 0% 100%, 75% 0%);
+        opacity: 0.9;
+    }    
+}
+/************************************ Portfolio section ***************************/
+
+.project-section{
+    height: 80vh;
+    display: grid;
+    padding: 4em 1em 4em 1em;
+    justify-items: center;
+    margin-top: 10em;
+}
+.mobile-preview{
+    width: 100%;
+    height: auto;
+}
+.desktop-ilustration{
+    display: none;
+}
+.mobile-ilustration{
+    display: none;
+}
+.about-project{
+    display: grid;
+    gap:.5em; 
+}
+.project-section--description{
+    max-width: 48ch;
+}
+.project-section--tools{
+    background-color: pink;
+    padding: .25em 1em .25em 1em;
+    border-radius: 1em;
+    font-weight: 500;
+    color: white;
+    margin-left: 1em;
+}
+@media(min-width:50em){
+    .mobile-preview{
+        display: none;
+    }
+    .desktop-ilustration{
+        display: block;
+    }
+    .mobile-ilustration{
+        display: block;
+    }
+    .project-section{
+        height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:1em;
+        padding: 4em 0 4em 0;
+        align-items: center;
+    }
+    
+    .mobile-desktop-preview{
+        display: flex;
+        gap:1em;
+        padding: 1em;
+        align-items: center;
+        justify-self: center;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 300ms ease-in, transform 500ms ease-in;
+    }
+    .mobile-desktop-preview.appear{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .about-project{
+        transform: translatey(-100px);
+        opacity: 0;
+        transition: opacity 300ms ease-in, transform 500ms ease-in;
+    }
+    .about-project.appear{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/***************************** Desktop and phone ilustration ***************************/
+.mobile-gif{
+    width: 100px;
+    height: 160px;
+}
+.mobile-ilustration{
+    width: 100px;
+    height: 160px;
+    border:5px solid black;
+    border-bottom: 30px solid black;
+    border-radius: .75em;
+    position: relative;
+    z-index: -1;
+    margin-top: 50px;
+}
+.mobile-ilustration::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 7px;
+    background-color: black;
+    top:0;
+    left: 20px;
+    border-radius: 0 0 .75em.75em;
+}
+
+.mobile-ilustration::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(56, 54, 54);
+    bottom:-24px;
+    left: 40px;
+    border-radius: 50%;
+}
+.desktop-ilustration{
+    width: 300px;
+    height: 150px;
+    border:5px solid black;
+    border-bottom: 30px solid black;
+    border-radius: .5em;
+    position: relative;
+}
+.desktop-gif{
+    width: 300px;
+    height: 150px;
+}
+.desktop-ilustration::before{
+    content: "";
+    width: 50px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    bottom: -60px;
+    left:125px;
+}
+.desktop-ilustration::after{
+    content: "";
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    bottom: -65px;
+    left: 90px;
+    border-radius: .3em;
+}
