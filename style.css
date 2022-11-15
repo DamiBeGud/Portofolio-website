@@ -1,5 +1,55 @@
 :root{
+    /*Colors*/
+    --clr-200: hsla(0, 0%, 100%, 1);
+    --clr-300: hsla(0, 0%, 0%, 1);
 
+    --clr-400: hsla(0, 0%, 15%, 1);
+    --clr-500: hsla(0, 0%, 30%, 1);
+
+    --clr-600: hsla(300, 100%, 25%, 1);
+
+    --clr-700: hsla(323, 50%, 58%, 1);
+    --clr-800: hsla(214, 50%, 58%, 1);
+    --clr-900: hsla(360, 50%, 58%, 1);
+
+    /*Button Background Colors and Font Colors*/
+    --button-bg: var(--clr-300);
+    --button-clr: var(--clr-200);
+    --github-bg: var(--clr-600);
+    --github-clr:var(--clr-200);
+
+    --button-bg-hover:var(--clr-200);
+    --button-clr-hover:var(--clr-300);
+    --github-bg-hover:var(--clr-200);
+    --github-clr-hover:var(--clr-600);
+
+    --body-clr:var(--clr-500);
+    --heading-clr:var(--clr-400);
+
+    /*Fonts*/
+
+    /*Font sizes*/
+    --size-300: 1rem;
+    --size-400: 1.5rem;
+    --size-500: 2rem;            
+    --size-600: 3rem;
+    --size-700: 4rem;
+
+    --main-heading: var(--size-600);
+    --sub-heading: var(--size-500);
+
+    --body-size: var(--size-300);
+
+    /*Font Weights*/
+    --weight-400: 400;
+    --weight-500: 500;
+    --weight-700: 700;
+    --weight-900: 900;
+
+    --normal:var(--weight-400);
+    --button:var(--weight-700);
+    --bold:var(--weight-700);
+    --bolder:var(--weight-900);
 }
 
 /**************************************** Reset ***************************************/
@@ -20,6 +70,37 @@ h1,h2{
 a{
     text-decoration: none;
 }
+/*************************************General Styling ***********************************/
+body{
+    font-size: var(--body-size);
+    font-weight: var(--normal);
+    color:var(--body-clr);
+}
+
+.button{
+    padding: .5em 1.5em .5em 1.5em;
+    background-color: var(--button-bg);
+    color: var(--button-clr);
+    border-radius: .75em;
+    font-weight: var(--button);
+    border: 1px solid var(--button-bg);
+    text-align: center;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: var(--button-bg-hover);
+    color: var(--button-clr-hover);
+}
+.tool-clr-100{
+background-color: var(--clr-700);
+}
+.tool-clr-200{
+    background-color: var(--clr-800);
+}
+.tool-clr-300{
+    background-color: var(--clr-900);
+}
+
 /*************************************** Header ****************************************/
 header{
     width: 100%;
@@ -27,7 +108,7 @@ header{
 }
 .header--logo{
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: var(--bolder);
     display: flex;
     justify-content: center;
     display: none;
@@ -45,6 +126,16 @@ header{
     padding: 1em;
     gap:2em;
 }
+.hero-section--heading--main-heading{
+    font-size:var(--main-heading);
+    font-weight: var(--bolder);
+    color:var(--heading-clr);
+}
+.hero-section-heading--subheading{
+    font-size: var(--sub-heading);
+    font-weight: var(--bold);
+    color:var(--heading-clr);
+}
 .hero-section--content--content{
     max-width: 48ch;
 }
@@ -53,32 +144,17 @@ header{
     grid-template-columns: 1fr 1fr;
     gap: 1em;
 }
-.button{
-    padding: .5em 1.5em .5em 1.5em;
-    background-color: black;
-    color: white;
-    border:none;
-    border-radius: .75em;
-    font-weight: 700;
-    border: 1px solid black;
-    text-align: center;
-}
+
 .button--github{
-    background-color: purple;
-    border:1px solid purple;
+    background-color: var(--github-bg);
+    border:1px solid var(--github-bg);
     padding: 1em 1.5em 1em 1.5em;
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.button:hover{
-    cursor: pointer;
-    background-color: white;
-    color: black;
-}
 .button--github:hover{
     cursor: pointer;
-    background-color: white;
-    color:purple;
+    color: var(--github-clr-hover);
 }
 
 @media(min-width:50em){
@@ -94,14 +170,6 @@ header{
     }
     .hero-section--heading--background{
         position: relative;
-    }
-    .hero-section--heading--main-heading{
-        color: black;
-        font-size: 3rem;
-    }
-    .hero-section-heading--subheading{
-        color: black;
-        font-size: 2rem;
     }
     .hero-section--content--content{
         max-width: 48ch;
@@ -142,15 +210,19 @@ header{
     display: grid;
     gap:.5em; 
 }
+.project-section--heading{
+    font-size: var(--sub-heading);
+    font-weight: var(--bold);
+    color:var(--heading-clr);
+}
 .project-section--description{
     max-width: 48ch;
 }
 .project-section--tools{
-    background-color: pink;
     padding: .25em 1em .25em 1em;
     border-radius: 1em;
     font-weight: 500;
-    color: white;
+    color: var(--clr-200);
     margin-left: 1em;
 }
 @media(min-width:50em){
