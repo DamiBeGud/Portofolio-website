@@ -27,6 +27,12 @@
     --heading-clr:var(--clr-400);
 
     /*Fonts*/
+    --ff-100:  'Open Sans', sans-serif;
+    --ff-200: 'Roboto Slab', serif;
+
+    --body-font: var(--ff-100);
+    --heading-font:var(--ff-200);
+    --button-font:var(--ff-200);
 
     /*Font sizes*/
     --size-300: 1rem;
@@ -81,12 +87,14 @@ a{
 }
 /*************************************General Styling ***********************************/
 body{
+    font-family: var(--body-font);
     font-size: var(--body-size);
     font-weight: var(--normal);
     color:var(--body-clr);
 }
 
 .button{
+    font-family: var(--button-font);
     padding: .5em 1.5em .5em 1.5em;
     background-color: var(--button-bg);
     color: var(--button-clr);
@@ -136,11 +144,13 @@ header{
     gap:2em;
 }
 .hero-section--heading--main-heading{
+    font-family: var(--heading-font);
     font-size:var(--main-heading);
     font-weight: var(--bolder);
     color:var(--heading-clr);
 }
 .hero-section-heading--subheading{
+    font-family: var(--heading-font);
     font-size: var(--sub-heading);
     font-weight: var(--bold);
     color:var(--heading-clr);
@@ -220,6 +230,7 @@ header{
     gap:.5em; 
 }
 .project-section--heading{
+    font-family: var(--heading-font);
     font-size: var(--sub-heading);
     font-weight: var(--bold);
     color:var(--heading-clr);
