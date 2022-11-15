@@ -244,6 +244,7 @@ header{
     font-weight: 500;
     color: var(--clr-200);
     margin-left: 1em;
+    line-height: 2;
 }
 @media(min-width:50em){
     .mobile-preview{
