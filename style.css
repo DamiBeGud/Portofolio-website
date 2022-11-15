@@ -51,6 +51,15 @@
     --bold:var(--weight-700);
     --bolder:var(--weight-900);
 }
+@media(min-width:65em){
+    :root{
+        --size-300: 1.25rem;
+        --size-400: 1.5rem;
+        --size-500: 3.5rem;            
+        --size-600: 4rem;
+        --size-700: 6rem;
+    }
+}
 
 /**************************************** Reset ***************************************/
 html{
