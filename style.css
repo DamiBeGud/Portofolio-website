@@ -142,6 +142,7 @@ header{
     justify-items: center;
     padding: 1em;
     gap:2em;
+    text-align: center;
 }
 .hero-section--heading--main-heading{
     font-family: var(--heading-font);
@@ -177,6 +178,7 @@ header{
 }
 
 @media(min-width:50em){
+    
     .hero-section{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -189,6 +191,9 @@ header{
     }
     .hero-section--heading--background{
         position: relative;
+    }
+    .hero-section--content{
+        text-align:start;
     }
     .hero-section--content--content{
         max-width: 48ch;
@@ -213,6 +218,9 @@ header{
     display: grid;
     padding: 4em 1em 4em 1em;
     justify-items: center;
+    text-align: center;
+}
+#projects{
     margin-top: 10em;
 }
 .mobile-preview{
@@ -263,6 +271,7 @@ header{
         gap:1em;
         padding: 4em 0 4em 0;
         align-items: center;
+        text-align: start;
     }
     
     .mobile-desktop-preview{
